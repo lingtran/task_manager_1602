@@ -18,6 +18,7 @@ class TaskManager
     #   database['total'] += 1
     #   database['tasks'] << { "id" => database['total'], "title" => task[:title], "description" => task[:description] }
     # end
+
   end
 
   def raw_tasks
@@ -42,6 +43,10 @@ class TaskManager
 
   def delete_all
     database.from[:tasks].delete
+    # database.transaction do
+    #   database['tasks'] = []
+    #   database['total'] = 0
+    # end
   end
 
   def all

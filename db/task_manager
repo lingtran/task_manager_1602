@@ -1,6 +1,7 @@
 ---
 tasks:
 - id: 1
+<<<<<<< HEAD
   title: Eat Cheerios
   description: So yum.
 - id: 4
@@ -10,3 +11,8 @@ tasks:
   title: Example Task
   description: Example Description
 total: 5
+=======
+  title: Do task manager
+  description: Running through task manager to prep for 1602  Mod2
+total: 3
+>>>>>>> 26e279aaf4d9781f5aff71f846f4893491adefc1

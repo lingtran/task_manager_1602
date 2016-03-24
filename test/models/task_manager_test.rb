@@ -20,6 +20,7 @@ class TaskManagerTest < Minitest::Test
     skip
     create_tasks(3)
 
+
     all_tasks = task_manager.all
 
     assert_equal Array, all_tasks.class
@@ -31,6 +32,13 @@ class TaskManagerTest < Minitest::Test
   def test_it_can_find_a_specific_task
     skip
 
+    assert_equal 4, all_tasks.size
+    assert_equal "Task Title 1", all_tasks.first.title
+    assert_equal "Task Title 4", all_tasks.last.title
+  end
+
+  def test_it_can_find_a_specific_task
+skip
     create_tasks(5)
 
     task1 = task_manager.find(1)
@@ -48,6 +56,7 @@ class TaskManagerTest < Minitest::Test
     skip
 
     create_tasks(1)
+
 
     task = task_manager.find(1)
 
@@ -73,6 +82,7 @@ class TaskManagerTest < Minitest::Test
     all_tasks = task_manager.all
 
     assert_equal 1, all_tasks.size
+
     assert all_tasks.any? { |task| task.title == "Task Title 1" }
 
     task_manager.destroy(1)
@@ -80,6 +90,7 @@ class TaskManagerTest < Minitest::Test
     all_tasks = task_manager.all
 
     assert_equal 0, all_tasks.size
+
     refute all_tasks.any? { |task| task.title == "Task Title 1" }
   end
 end

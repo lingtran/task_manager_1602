@@ -3,6 +3,7 @@ ENV['RACK_ENV'] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__ )
 require "minitest/autorun"
 require "minitest/pride"
+<<<<<<< HEAD
 require 'capybara/dsl'
 require 'tilt/erb'
 
@@ -14,7 +15,7 @@ module TestHelpers
     task_manager.delete_all
     super
   end
-  
+
   def teardown
     task_manager.delete_all
     super
@@ -25,7 +26,8 @@ module TestHelpers
     @task_manager ||= TaskManager.new(database)
   end
 
-  def create_tasks(num)
+
+  def create_tasks(num = 2)
     num.times do |i|
       task_manager.create({
         :title       => "Task Title #{i + 1}",

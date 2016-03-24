@@ -6,6 +6,7 @@ class TaskTest < Minitest::Test
                       :description => "Task Description",
                       :id => 1 })
 
+
     assert_equal "Task Title", task.title
     assert_equal "Task Description", task.description
     assert_equal 1, task.id
