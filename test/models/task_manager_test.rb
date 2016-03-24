@@ -5,6 +5,7 @@ class TaskManagerTest < Minitest::Test
 
   def test_it_creates_a_task
     task_manager.create({
+      :id => 1,
       :title       => "Task Title",
       :description => "Task Description"
       })

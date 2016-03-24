@@ -39,15 +39,12 @@ class TaskManagerApp < Sinatra::Base
   end
 
   def task_manager
-<<<<<<< HEAD
     if ENV["RACK_ENV"] == "test"
       database = Sequel.sqlite('db/task_manager_test.sqlite3')
     else
       database = Sequel.sqlite('db/task_manager_development.sqlite3')
     end
-=======
-    database = YAML::Store.new('db/task_manager')
->>>>>>> 26e279aaf4d9781f5aff71f846f4893491adefc1
+
     @task_manager ||= TaskManager.new(database)
   end
 end
